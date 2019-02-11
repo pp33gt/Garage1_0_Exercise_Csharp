@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2A88D53-594D-4032-BF32-9E1F1739E883}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Garage.BLL</RootNamespace>
+    <AssemblyName>Garage.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainEntities\AirPlane.cs" />
+    <Compile Include="DomainEntities\Boat.cs" />
+    <Compile Include="DomainEntities\Bus.cs" />
+    <Compile Include="DomainEntities\Car.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="ColorHelper.cs" />
+    <Compile Include="DomainEntities\Garage.ListVehicleByPropertyArgs.cs" />
+    <Compile Include="DomainEntities\Garage.cs" />
+    <Compile Include="GarageHandler.cs" />
+    <Compile Include="DomainEntities\MotorCycle.cs" />
+    <Compile Include="DomainEntities\Vehicle.cs" />
+    <Compile Include="DalEntityMapper.cs" />
+    <Compile Include="ConsoleUI\MenuItem.cs" />
+    <Compile Include="ConsoleUI\MenuItems.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConsoleUI\UIConsoleHandler.PropertySearch.cs" />
+    <Compile Include="ConsoleUI\UIConsoleHandler.cs" />
+    <Compile Include="VehicleFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Garage.Common\Garage.Common.csproj">
+      <Project>{0e427533-a32e-41e0-a9d0-d58fb7ff730a}</Project>
+      <Name>Garage.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Garage.DAL\Garage.DAL.csproj">
+      <Project>{d8b4eed5-925e-468d-a40e-93487125abcc}</Project>
+      <Name>Garage.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
